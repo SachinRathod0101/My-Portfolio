@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,800;1,200;1,300&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,800;1,200;1,300&display=swap');
 
 :root{
   --yellow:#f9ca24;
@@ -27,6 +28,19 @@
 *::selection{
   background:var(--yellow);
   color:#333 ;
+}
+html{
+  font-size: 62.5%;
+  overflow: hidden;
+}
+html::-webkit-scrollbar{
+  width: 1.4rem;
+}
+html::-webkit-scrollbar-track{
+  background: #222;
+}
+html::-webkit-scrollbar-thumb{
+  background: var(--yellow);
 }
 body{
     background-color: #333;
@@ -242,110 +256,235 @@ header .navbar ul li a:hover{
  align-items: center;
 }
 .info{
-  color: rgb(226, 188, 188);
+  color: yellowgreen;
   padding: 30px;
   font-size: 15px;
 }
 .info a{
   text-decoration: none;
   border-style: none;
-  color: red;
+  color: yellowgreen;
 }
 .info:hover{
   font-size: 20px;
 }
+
+.education .row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+.education .row .info{
+  flex:1 1 48rem ;
+  padding:2rem 1rem ;
+  padding-left: 6rem;
+}
+.education .row .info h3{
+  font-size: 2rem;
+  color:var(--yellow) ;
+  padding: 1rem 0;
+  font-weight: normal;
+}
+.education .row .info h3 span{
+  color: #eee;
+  padding:0.5rem ;
+}
+
+
+@media  (max-width: 400px) and (max-width: 700px) {
+  html{
+    font-size: 55%;
+  }
+  header{
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: 10%;
+    width: 100%;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center ;
+    flex-flow: row;
+    text-align: center;
+  }
+  header .user img{
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top:1rem ;
+    border: .3rem solid var(--yellow);
+    
+  }
+  header .user .name{
+    font-size: 5px;
+    color: #fff;
+  }
+  header .user .post{
+    font-size: 10px;
+    color: #eee;
+  }
+  header .navbar{
+    width: 30px;
+  }
+  header .navbar ul{
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .navbar ul li a{
+    display: block;
+    margin: 1.5rem 0;
+    background: #333;
+    color:#fff ;
+    font-size: 1rem;
+    border-radius: 5rem;
+  }
+  header .navbar ul li a:hover{
+     background-color: var(--yellow);
+  }
+  
+   body{
+    padding-top:5rem ;
+    padding-left: 30px;
+   }
+   .Home{
+    flex-flow: column;
+    padding: 0 7rem;
+   }
+   .Home h1{
+    font-size: 5rem;
+    display: flex;
+   }
+   header  .post{
+    display: none;
+   }
+   .user h3{
+    display: none;
+   }
+   .About .row .info{
+    
+    padding-left: 0rem;
+  }
+  .education .row .info{
+    padding-left: 0rem;
+  }
+  .Projet .row .info{
+    padding-left: 0rem;
+  }
+  .Contact .row .info{
+    padding-left: 0rem;
+    padding: -6rem;
+  }
+  .info:hover{
+    font-size: 15px;
+  }
+}
+
+
+
     </style>
 </head>
 <body>
-    <header>
-        <div class="user">
-            <img src="./src/sachin1.jpeg" alt="sachin">
-            <h3 class="name">Sachin Rathod</h3>
-           <p class="post">Front end devloper</p>
+  <header>
+    <div class="user">
+        <img src="src/sachin1.jpeg" alt="sachin">
+        <h3 class="name">Sachin Rathod</h3>
+       <p class="post">Front end devloper</p>
+    </div>
+    <nav class="navbar">
+        <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#Projet">Projet</a></ol>
+        <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="fas fa-bars" id="menu"></div>
+<section class="Home" id="Home">
+    <h3>HI THERE !</h3>
+    <h1>I'M <span>SACHIN RATHOD</span></h1>
+    <p>Web-Devloper </p>
+</section>
+<section class="About" id="About">
+    <marquee behavior="alternate" direction="" scrollamount="20">
+        <h1 class="heading" ><span>About</span>Me</h1>
+    </marquee>
+    <div class="row">
+        <div class="info">
+        <h3><span>Name:</span>Sachin Rathod</h3>
+        <h3><span>Age:</span>20</h3>
+        <h3><span>Qualification:</span>(IT)Information Technology</h3>
+        <h3><span>Language:</span>English/Hindi/Marathi/Banjara</h3>
         </div>
-        <nav class="navbar">
-            <ul>
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#About">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#Projet">Projet</a></ol>
-            <li><a href="#Contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="fas fa-bars" id="menu"></div>
-    <section class="Home" id="Home">
-        <h3>HI THERE !</h3>
-        <h1>I'M <span>SACHIN RATHOD</span></h1>
-        <p>Web-Devloper </p>
-    </section>
-    <section class="About" id="About">
-        <marquee behavior="alternate" direction="" scrollamount="20">
-            <h1 class="heading" ><span>About</span>Me</h1>
-        </marquee>
-        <div class="row">
-            <div class="info">
-            <h3><span>Name:</span>Sachin Rathod</h3>
-            <h3><span>Age:</span>20</h3>
-            <h3><span>Qualification:</span>(IT)Information Technology</h3>
-            <h3><span>Language:</span>English/Hindi/Marathi/Banjara</h3>
-            </div>
-            
-        </div>
-    </section>
-    <section class="education" id="education">
-        <marquee behavior="alternate" direction="" scrollamount="20" >
-            <h1 class="heading">My <span>Education</span></h1>
-        </marquee>
-        <div class="row">
+        
+    </div>
+</section>
+<section class="education" id="education">
+    <marquee behavior="alternate" direction="" scrollamount="20" >
+        <h1 class="heading">My <span>Education</span></h1>
+    </marquee>
+    <div class="row">
+        <DIV class="info">
+            <h3><span>Digree:</span>INFORMATION-TECHNOLOGT</h3>
+        <h3><span>Passout:</span>2024</h3>
+        <h3><span>Qualification:</span>(IT)Information Technology</h3>
+        <h3><span>12Th-Passout:</span>2021</h3> 
+        <h3><span>12Th-Marks:</span>77.00%</h3> 
+        <h3><span>10Th-Passout:</span>2019</h3>
+        <h3><span>10Th-Marks:</span>65.00%</h3>
+        <h3><span>College-Name:</span>ADITYA ENGINEERING COLLEGE</h3>
+        </DIV>
+    </div>
+</section>
+<section class="Projet" id="Projet">
+    <marquee behavior="alternate" direction="" scrollamount="20">
+        <h1 class="heading" ><span>My</span>Projets</h1>
+    </marquee>
+    <div class="row">
 
+    </div>
+   <div class="box-container" style="margin-top: -100px;">
+    <div class="box">
+        <a href="../Bootstrap-5/Bootstrap-link-script.html"><img src="src/projet-logo.webp" alt="sachin"></a>
+    </div>
+    <div class="box">
+        <a href="../../projets/Netflix.html"><img src="src/Netflix-Symbol.png" alt="sachin"></a>
+    </div>
+    <div class="box">
+        <a href="#"><img src="src/amzon-logo.jpg" alt="sachin"></a>
+    </div>
+    <div class="box">
+        <a href="../../projets/You-tube.html"><img src="src/youtube-logo.webp" alt="sachin"></a>
+    </div>
+   </div>
+   
+</section>
+<section class="Contact" id="Contact">
+    <marquee behavior="alternate" direction="" scrollamount="20">
+        <h1 class="heading"> <span>Contact</span>Me</h1>
+    </marquee>
+    <div class="row">
+        <div class="content">
+                <h3 class="title">Contact info</h3>
+             <div class="info">
+                <h3><i class="fas fa-evevlope"></i>Sachinrathod23508@gmail.com</h3>
+                <h3><i class="fas fa-phone"></i>+91-9803767677</h3>
+                <h3><i class="fas fa-phone"></i>+91-8308775787</h3>
+                <a href="https://instagram.com/s_a_c_h_i_n_0101?igshid=NzZlODBkYWE4Ng=="><h3><span><img src="src/instagram logo43.png" width="30" height="30" alt=""></span>s_a_c_h_i_n_0101</h3></a>
+                <h3><i class="fas fa-map-marker-alt"></i> (1)1Maharashtra, Beed - 431122</h3>
+                <h3><i class="fas fa-map-marker-alt"></i> (2) Hyderabad - 500001</h3>
+             </div>
         </div>
-    </section>
-    <section class="Projet" id="Projet">
-        <marquee behavior="alternate" direction="" scrollamount="20">
-            <h1 class="heading" ><span>My</span>Projets</h1>
-        </marquee>
-        <div class="row">
-
-        </div>
-       <div class="box-container" style="margin-top: -100px;">
-        <div class="box">
-            <a href="./projets/Shopper-sachin.html"><img src="src/projet-logo.webp" alt="sachin"></a>
-        </div>
-        <div class="box">
-            <a href="#"><img src="../images/sachin2.jpeg" alt="sachin"></a>
-        </div>
-        <div class="box">
-            <a href="#"><img src="../images/sachin3.jpeg" alt="sachin"></a>
-        </div>
-        <div class="box">
-            <a href="#"><img src="../images/sachin4.jpeg" alt="sachin"></a>
-        </div>
-        <div class="box">
-            <a href="#"><img src="../images/sachin5.jpeg" alt="sachin"></a>
-        </div>
-       </div>
-       
-    </section>
-    <section class="Contact" id="Contact">
-        <marquee behavior="alternate" direction="" scrollamount="20">
-            <h1 class="heading"> <span>Contact</span>Me</h1>
-        </marquee>
-        <div class="row">
-            <div class="content">
-                    <h3 class="title">Contact info</h3>
-                 <div class="info">
-                    <h3><i class="fas fa-evevlope"></i>Sachinrathod23508@gmail.com</h3>
-                    <h3><i class="fas fa-phone"></i>+91-9803767677</h3>
-                    <h3><i class="fas fa-phone"></i>+91-8308775787</h3>
-                    <a href="https://instagram.com/s_a_c_h_i_n_0101?igshid=NzZlODBkYWE4Ng=="><h3><span><img src="src/instagram logo43.png" width="30" height="30" alt=""></span>s_a_c_h_i_n_0101</h3></a>
-                    <h3><i class="fas fa-map-marker-alt"></i> (1)1Maharashtra, Beed - 431122</h3>
-                    <h3><i class="fas fa-map-marker-alt"></i> (2) Hyderabad - 500001</h3>
-                 </div>
-            </div>
-        </div>
-    </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
-    <script src="../javascript-ex/script.js"></script>
+    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+<script src="../javascript-ex/script.js"></script>
 </body>
 </html>
